@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    line-height: 1.5;
+    font-family: 'Space Grotesk', sans-serif;
+    /* background-color: #e7fcd5;   */
+    background-color: #f6ffee;  
+}
+
+header {  
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    background-color: #f6ffee;
+    border-bottom: .05em solid #5a012e;
+
+} 
+
+nav {
+    width: 100%;
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    margin-left: auto;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px 40px;
+}
+
+nav a {
+    text-decoration: none; 
+    font-size: 1.5em; 
+    font-weight: bold;
+    color:#5a012e;
+}
+
+nav a:hover {
+    border-bottom: .2em solid #5a012e;
+}
+
+p {
+    padding-top: .5em;
+}
+
+p:nth-child(1) {
+    padding-top: 0;
+}
+
+p.nav-title {
+    font-size: 1.75em; 
+    font-weight: 300;
+    color:#5a012e;
+    padding: 10px 20px;
+}
+
+.wrapper {
+    padding: 0 0 3em 3em;
+}
+
+.recipeInfo {
+    padding: 1em 0 0 0;
+}
+
+ul.ingredientCategories {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.recipeList ul {
+    list-style-type: none;
+}
+
+.recipeList li {
+    line-height: 2em;
+}
+
+.recipeList {
+    padding: 1.25em 0 0 0;
+}
+
+.recipeList a {
+    text-decoration: none; 
+    font-weight: bold;
+    color:#5a012e;
+    padding: 1em 0 0 0;
+}
+
+.recipeList a:hover {
+    border-bottom: .1em solid #5a012e;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 300;
+    padding: 1em 0 0 0;
+}
+
+.detail h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    padding: 1em 0 0 0;
+}
+
+.detail h2 {
+    font-size: 1.75em;
+    text-decoration: underline;
+    padding: 1em 0 0 0;
+}
+
+.detail h3 {
+    font-size: 1.2em;
+    padding: .5em 0 0 0;
+}
+
+a.return {
+    display: inline-block;
+    padding: 1.5em 0 0 0;
+    text-decoration: none; 
+    font-weight: bold;
+    color:#5a012e;
+}
+
+a.return:hover {
+    border-bottom: .1em solid #5a012e;
+}
+
+.content {
+    padding: 1.25em 0 0 0;
+}
+
+figure {
+    width: 300px;
+    height: 350px;
+    margin: 1em 0 0 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+figure img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+    max-width: 100%;
+}

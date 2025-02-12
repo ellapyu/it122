@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= recipeName %> - Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <div class="wrapper detail">
+        <h1><%= recipeName %></h1>
+
+        <% if (selectedRecipe.recipeImage) { %>
+            <figure>
+                <img src="<%= selectedRecipe.recipeImage %>" alt="<%= recipeName %>">
+                <% if (selectedRecipe.imgCredit) { %> 
+                    <figcaption>Image source: <a href="<%= selectedRecipe.imgCreditUrl %>" target="_blank"><%= selectedRecipe.imgCredit %></a></figcaption>
+                <% } else { %>
+                    <figcaption></figcaption>
+                <% } %>
+            </figure>
+        <% } %>
+
+        <% if (selectedRecipe) { %>
+            <div class="recipeInfo">
+                <p><strong>Cuisine:</strong> <%= selectedRecipe.cuisine %></p>
+                <p><strong>Difficulty:</strong> <%= selectedRecipe.difficulty %></p>
+                <p><strong>Cook time:</strong> <%= selectedRecipe.cook_mins %> minutes</p>
+                <p><strong>Clean up time:</strong> <%= selectedRecipe.clean_mins %> minutes</p>
+            </div>
+            <h2>Ingredients</h2>
+
+            <% for (const ingredientCategory in selectedRecipe.sortedIngredients) { %>
+                <% if (selectedRecipe.sortedIngredients[ingredientCategory].length > 0) { %>
+                    <h3><%= ingredientCategory %></h3>
+                    <ul class="ingredientCategories">
+                        <% selectedRecipe.sortedIngredients[ingredientCategory].forEach(ingredient => { %>
+                            <li><%= ingredient %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
+            <% } %>
+
+        <% } else { %>
+            <p>Hmm... I couldn't find this recipe.</p>
+        <% } %>
+        <a href="/" class="return">Back to Home</a>
+    </div>
+</body>
+</html>

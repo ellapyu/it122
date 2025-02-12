@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ella Yu's IT 122 Webpage - Recipes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <div class="wrapper home">
+        <h1>Recipe List</h1>
+        <div class="recipeList">
+            <ul>
+                <% recipes.forEach(selectedRecipe => { %>
+                    <li>
+                        <a href="/detail?name=<%= encodeURIComponent(selectedRecipe.name) %>">
+                            <%= selectedRecipe.name %>
+                        </a> - <%= selectedRecipe.cuisine %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+ 
