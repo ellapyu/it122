@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
 // For security, connectionString should be in a separate file and excluded from git
-require('dotenv').config()
-const { MongoClient } = require('mongodb');
-const uri = process.env.MONGO_URI;
-const connectionString = new MongoClient(uri);
+import dotenv from 'dotenv';
+
+dotenv.config();
+const connectionString = process.env.mongoURI;
 
 
 const connectdb = async () => {
