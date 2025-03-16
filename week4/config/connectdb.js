@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 
 // For security, connectionString should be in a separate file and excluded from git
-const connectionString = "mongodb+srv://<dbuser>:<dbpassword>@<cluster>.mongodb.net/test?retryWrites=true";
+require('dotenv').config()
+const { MongoClient } = require('mongodb');
+const uri = process.env.MONGO_URI;
+const connectionString = new MongoClient(uri);
 
 
 const connectdb = async () => {
@@ -9,8 +12,6 @@ const connectdb = async () => {
         mongoose.set('debug', true); // Enable Mongoose query debugging
         await mongoose.connect(connectionString, {
         dbName: 'sccprojects',
-        useNewUrlParser: true,
-        useUnifiedTopology: true
         });
 
         console.log('Mongoose connected.');
