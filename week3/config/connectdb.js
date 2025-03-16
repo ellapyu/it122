@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 
 // For security, connectionString should be in a separate file and excluded from git
-const connectionString = "mongodb+srv://<dbuser>:<dbpassword>@<cluster>.mongodb.net/test?retryWrites=true";
+import dotenv from 'dotenv';
 
+dotenv.config();
+const connectionString = process.env.mongoURI;
 
 const connectdb = async () => {
     try {
