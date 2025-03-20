@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ella Yu's IT 122 Webpage - Recipes</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <%- include('header') %>
+    <div class="wrapper home">
+        <h1>Recipe List</h1>
+        <!-- elements within the root node are managed by react -->
+        <div id="root"></div>
+
+    </div>
+
+    <script type="text/babel">
+        // create variable with unescaped JS data from server
+        const recipes = <%- recipes %>;
+        console.log(recipes)
+    
+        // define other components
+    
+        //component for each recipe item
+        function RecipeRow({ recipe }) {
+            return (
+                <li>
+                    <a href={`/detail?name=${encodeURIComponent(recipe.name)}`}>
+                        {recipe.name}
+                    </a> - {recipe.cuisine}
+                </li>
+            );
+        }
+    
+        //component for recipe list
+        function RecipeList({recipes}) {
+            return(
+                <div className="recipeList">
+                    <ul>
+                        {recipes.map(recipe => (
+                            <RecipeRow recipe={recipe} key={recipe._id} />
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        function RecipeApp({ recipes }) {
+            return(
+                    <RecipeList recipes={recipes} />
+            );
+        }
+
+        ReactDOM.render(<RecipeApp recipes={recipes}/>, document.getElementById('root'));
+    </script>
+</body>
+</html>
