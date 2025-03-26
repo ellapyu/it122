@@ -1,0 +1,7 @@
+# ignore npm packages
+node_modules
+.idea/
+.DS_Store
+.env
+.txt
+mongodb-uri.txt
