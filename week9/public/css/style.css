@@ -1,0 +1,362 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    line-height: 1.5;
+    font-family: 'Space Grotesk', sans-serif;
+    /* background-color: #e7fcd5;   */
+    background-color: #f6ffee;  
+}
+
+/* typography */
+
+p {
+    padding-top: .5em;
+    font-size: .8em;
+}
+
+p:nth-child(1) {
+    padding-top: 0;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 300;
+    padding: 1em 0 0 0;
+}
+
+.detail h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    padding: 1em 0 0 0;
+}
+
+h2 {
+    font-size: 1.9em;
+    text-decoration: underline;
+    padding: 1em 0 0 0;
+    font-weight: 400;
+    color:#5a012e;
+}
+
+h2:hover {
+    color:black;
+}
+
+h2#form:hover {
+    color: #5a012e;
+}
+
+.detail h3 {
+    font-size: 1.2em;
+    padding: .5em 0 0 0;
+}
+
+/* header and nav */
+
+header {  
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    background-color: #f6ffee;
+    border-bottom: .05em solid #5a012e;
+
+} 
+
+nav {
+    width: 100%;
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    margin-left: auto;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px 40px;
+}
+
+nav a {
+    text-decoration: none; 
+    font-size: 1.5em; 
+    font-weight: bold;
+    color:#5a012e;
+}
+
+nav a:hover {
+    border-bottom: .2em solid #5a012e;
+}
+
+p.nav-title {
+    font-size: 1.75em; 
+    font-weight: 300;
+    color:#5a012e;
+    padding: 10px 20px;
+}
+
+/* layout */
+.wrapper {
+    padding: 0 0 3em 3em;
+}
+
+.content {
+    padding: 1.25em 0 0 0;
+}
+
+.root {
+    margin-bottom: 4em;
+}
+/* recipe list */
+
+.recipeList {
+    list-style: none;
+}
+
+.recipeList ul {
+    list-style-type: none;
+}
+
+.recipeList li {
+    line-height: 1.5em;
+}
+
+.recipeList a {
+    text-decoration: none; 
+    font-weight: bold;
+    color:#5a012e;
+    padding: 1em 0 0 0;
+}
+
+.recipeList a:hover {
+    border-bottom: .1em solid #5a012e;
+}
+
+/* recipe detail */
+
+figure {
+    width: 100%;
+    max-width: 300px;
+    margin: 1em 0 0 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    font-size: 0.6em;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+    max-width: 100%;
+}
+
+.detail {
+    display: flex;
+    gap: 1em;
+    align-items: stretch;
+    margin-top: 1.5em;
+    flex-wrap: wrap;
+}
+
+.recipeRow {
+    margin-bottom: 4em;
+}
+
+.recipeInfo {
+    flex: 1 1 60%;
+    max-width: 600px;
+}
+
+.recipeInfoRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: .5em;
+  }
+
+.recipeInfoRow:last-of-type {
+    margin-bottom: 1.5em;
+}
+  
+.recipeInfoRow span {
+    background: #f2f2f2;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.ingredientGrid {
+    column-count: 3;         /* Two vertical columns */
+    column-gap: 2em;         /* Space between columns */
+    margin-top: 1.5em;
+    margin-left: .5em;
+    max-width: 600px;
+}
+
+.ingredientGroup {
+    break-inside: avoid;
+    margin-bottom: 0.5em;
+}
+  
+.ingredientGroup h4 {
+    margin-bottom: 0.1em;
+    color: #5a012e;
+    font-size: 1em;
+}
+
+.ingredientCategories {
+    list-style-type: disc;
+    padding-left: 1em;
+    margin-bottom: .5em;
+}
+
+ul.ingredientCategories {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+button, input#clear, input#submit, input#delete {
+    background: rgb(235, 235, 235);
+    border: .2px solid rgb(215, 215, 215);
+    cursor: pointer;
+    text-align: left;
+    display: inline-block;
+    padding: .1em .6em;
+    border-radius: .2em;
+}
+
+button#recipes {
+    background: none;
+    padding: 0;
+    border: none!important;
+    width: 100%;
+}
+
+button#addnew {
+    display: block;
+    margin: 2em 0;
+    text-align: center;
+    padding: .2em .3em;
+    font-size: .9em;
+}
+
+button#edit, input#delete {
+    margin: 1em 10em;
+    text-align: center;
+    padding: .2em .3em;
+    font-size: .9em;
+    display: block;
+    min-width: 100px;
+}
+
+button:hover, input#clear:hover, input#submit:hover, input#delete:hover {
+    text-decoration: underline;
+    font-weight: 400;
+    color:#5a012e;
+}
+
+button#recipes:hover {
+    text-decoration: none;
+}
+
+label {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+input#clear, input#submit {
+    min-width: 50px!important;
+    text-align: center;
+}
+
+input {
+    margin-left: .5em;
+    min-width: 300px;
+    padding: 0 .5em;
+}
+
+form {
+    margin-top: 1em;
+}
+
+.detail figure {
+    flex: 1 1 30%;
+    max-width: 300px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: scroll;
+}
+
+.modal {
+    background: #f2f2f2;
+    padding: 2em;
+    width: 70%;
+    max-width: 700px;
+}
+
+.close {
+    float: right!important;
+    font-size: 1.5em;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+  
+.ingredient-edit-row {
+    display: flex;
+    gap: 0.5em;
+    margin: 0.5em 0;
+}
+
+a.return {
+    display: inline-block;
+    padding: 1.5em 0 0 0;
+    text-decoration: none; 
+    font-weight: bold;
+    color:#5a012e;
+}
+
+a.return:hover {
+    border-bottom: .1em solid #5a012e;
+}
